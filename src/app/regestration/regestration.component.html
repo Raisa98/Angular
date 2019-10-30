@@ -1,0 +1,36 @@
+<hr class="hr_first" appHeaderstyle>
+<div class="container">
+  <div class="row">
+    <div class="col-6 offset-3">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <div formGroupName="user">
+
+    <div class="form-group">
+      <input type="text" class="form-control" formControlName="email">
+      <p *ngIf="form.get('user.email').invalid && form.get('user.email').touched" >Введите корректный email</p>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" formControlName="pass">
+      <p *ngIf="form.get('user.pass').invalid && form.get('user.pass').touched" >Enter password</p>
+    </div>
+
+  </div>
+
+
+  <div class="form-group">
+    <select class="form-control" formControlName="select">
+      <option value="1"> Armenia </option>
+      <option value="2"> Gerogia </option>
+      <option value="3"> USA </option>
+    </select>
+  </div>
+  <div class="radio">
+    <input type="radio" name="answer" formControlName="answer" value="yes">yes
+    <input type="radio" name="answer" formControlName="answer" value="no">no
+  </div>
+  <button type="submit" class="btn btn-light" [disabled]="form.invalid"> submit </button>
+</form>
+    </div>
+  </div>
+</div>

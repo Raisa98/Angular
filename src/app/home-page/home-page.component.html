@@ -1,0 +1,7 @@
+<div class="container-fluid">
+  <div class="row text-center">
+    <div class="col-12 col-sm-4 col-md-3" *ngFor = "let item of card;let i =index">
+      <app-cards [x]="item" [z] = "i"></app-cards>
+    </div>
+  </div>
+</div>
